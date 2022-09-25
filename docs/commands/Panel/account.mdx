@@ -1,0 +1,112 @@
+---
+sidebar_position: 1
+---
+
+import {
+  DiscordMessages,
+  DiscordMessage,
+  DiscordCommand,
+  DiscordEmbed,
+  DiscordEmbedDescription,
+  DiscordEmbedFields,
+  DiscordEmbedField,
+  DiscordAttachments,
+  DiscordActionRow,
+  DiscordButton,
+  DiscordEmbedFooter,
+  DiscordMention,
+  DiscordTime
+} from "@skyra/discord-components-react";
+
+# Account
+Account Command To `connect`, `create`, `disconnect`, `verify`, `info` In The Bot
+
+:::info Note
+Just An Example, Its Not The Real Store!
+:::
+
+## Connect
+<DiscordMessages>
+  <DiscordMessage bot="true" roleColor="#FF0000" author="Ptero Manager" avatar="/img/ptero-manager.png">
+    <DiscordCommand slot="reply" author="User" command="/account connect" />
+    Check{" "} 
+    <DiscordMention type="channel">123456789</DiscordMention> To Link You Account
+  </DiscordMessage>
+</DiscordMessages>
+
+## Create
+<DiscordMessages>
+  <DiscordMessage bot="true" roleColor="#FF0000" author="Ptero Manager" avatar="/img/ptero-manager.png">
+    <DiscordCommand slot="reply" author="User" command="/account create" />
+    Check{" "} 
+    <DiscordMention type="channel">123456789</DiscordMention> To Create Your Account!
+  </DiscordMessage>
+</DiscordMessages>
+
+## Disconnect
+<DiscordMessages>
+  <DiscordMessage bot="true" roleColor="#FF0000" author="Ptero Manager" avatar="/img/ptero-manager.png">
+    <DiscordCommand slot="reply" author="User" command="/account disconnect" />
+    <DiscordEmbed
+      slot="embeds"
+      color="#2f3136"
+      authorName="Creating User"
+      authorImage="/img/ptero-manager.png"
+    >
+        <DiscordEmbedDescription slot="description">Unlinked Account Was Successful</DiscordEmbedDescription>
+        <DiscordEmbedFooter slot="footer" timestamp="Today"></DiscordEmbedFooter>
+    </DiscordEmbed>
+  </DiscordMessage>
+</DiscordMessages>
+
+## Info
+<DiscordMessages>
+  <DiscordMessage bot="true" roleColor="#FF0000" author="Ptero Manager" avatar="/img/ptero-manager.png">
+    <DiscordCommand slot="reply" author="User" command="/account info" />
+    <DiscordEmbed
+      slot="embeds"
+      color="#2f3136"
+      authorName="Ptero Manager#1234"
+      authorImage="/img/ptero-manager.png"
+      thumbnail="/img/ptero-manager.png"
+    >
+        <DiscordEmbedDescription slot="description">Check Your Mail We Have Sent An Verification Link.</DiscordEmbedDescription>
+        <DiscordEmbedFields slot="fields">
+            <DiscordEmbedField fieldTitle="Username">PteroManager</DiscordEmbedField>
+        </DiscordEmbedFields>
+        <DiscordEmbedFields slot="fields">
+            <DiscordEmbedField fieldTitle="Coins">100</DiscordEmbedField>
+        </DiscordEmbedFields>
+        <DiscordEmbedFields slot="fields">
+            <DiscordEmbedField fieldTitle="Create At"><DiscordTime>September 1, 2022 0:00 AM</DiscordTime></DiscordEmbedField>
+        </DiscordEmbedFields>
+        <DiscordEmbedFields slot="fields">
+            <DiscordEmbedField fieldTitle="Language">EN</DiscordEmbedField>
+        </DiscordEmbedFields>
+        <DiscordEmbedFields slot="fields">
+            <DiscordEmbedField inline inlineIndex={1} fieldTitle="Server(s)">0/0</DiscordEmbedField>
+            <DiscordEmbedField inline inlineIndex={2} fieldTitle="Voted User">Yes</DiscordEmbedField>
+        </DiscordEmbedFields>
+        <DiscordEmbedFooter slot="footer" timestamp="Today"></DiscordEmbedFooter>
+    </DiscordEmbed>
+  </DiscordMessage>
+</DiscordMessages>
+
+## Verify
+<DiscordMessages>
+  <DiscordMessage bot="true" roleColor="#FF0000" author="Ptero Manager" avatar="/img/ptero-manager.png">
+    <DiscordCommand slot="reply" author="User" command="/account verify" />
+    <DiscordEmbed
+      slot="embeds"
+      color="#2f3136"
+      authorName="Ptero Manager#1234"
+      authorImage="/img/ptero-manager.png"
+    >
+        <DiscordEmbedDescription slot="description">Check Your Mail We Have Sent An Verification Link.</DiscordEmbedDescription>
+        <DiscordEmbedFields slot="fields">
+            <DiscordEmbedField fieldTitle="Not Recived?">In Gmail Check <code>ALL MAIL</code> Section To Verify</DiscordEmbedField>
+        </DiscordEmbedFields>
+        <DiscordEmbedFooter slot="footer" timestamp="Today"></DiscordEmbedFooter>
+    </DiscordEmbed>
+  </DiscordMessage>
+</DiscordMessages>

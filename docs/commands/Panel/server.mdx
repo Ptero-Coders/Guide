@@ -1,0 +1,49 @@
+---
+sidebar_position: 3
+---
+
+import {
+  DiscordMessages,
+  DiscordMessage,
+  DiscordCommand,
+  DiscordEmbed,
+  DiscordEmbedDescription,
+  DiscordEmbedFields,
+  DiscordEmbedField,
+  DiscordAttachments,
+  DiscordActionRow,
+  DiscordButton,
+  DiscordEmbedFooter,
+  DiscordMention
+} from "@skyra/discord-components-react";
+
+# Server
+All Commands To Use In The Server
+
+:::info Note
+Just An Example, Its Not The Real Store!
+:::
+
+<DiscordMessages>
+  <DiscordMessage bot="true" roleColor="#FF0000" author="Ptero Manager" avatar="/img/ptero-manager.png">
+    <DiscordCommand slot="reply" author="User" command="/server" />
+    <DiscordEmbed
+      slot="embeds"
+      color="#2f3136"
+      authorName="Server Area"
+      authorImage="/img/ptero-manager.png"
+    >
+        <DiscordEmbedDescription slot="description">
+<b>/server create</b> - Creates A Server.<br/>
+<b>/server delete</b> - Deletes The Specified Server.<br/>
+<b>/server list</b> - Get All Server List.<br/>
+<b>/server status</b> - Get Info About The Server Provided.<br/><br/>
+
+<u><b>BETA</b></u><br/>
+<b>/server link</b> - Links Domain To The Server.<br/>
+<b>/server unlink</b> - Unlinks The Specified Domain<br/>
+        </DiscordEmbedDescription>
+        <DiscordEmbedFooter slot="footer" timestamp="Today"></DiscordEmbedFooter>
+    </DiscordEmbed>
+  </DiscordMessage>
+</DiscordMessages>

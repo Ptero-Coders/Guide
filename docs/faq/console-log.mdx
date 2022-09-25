@@ -1,0 +1,18 @@
+---
+sidebar_position: 1
+---
+
+# Console Log Not Showing Up?
+
+If Your Console Log Is Not Showing Up In Server Status Command, Then You Need To Enable It From Your Pterodactyl Panel.
+
+## How To Enable Console Log?
+> You Need To Edit `/etc/pterodactyl/config.yml`
+> 
+> The Origin Of The Websocket Request Is Not Whitelisted. If You Have Access To Wings For The Node You're Using Then Set allowed_origins In "config.yml" To This:
+
+```jsx title="config.yml"
+allowed_origins: [
+    "*"
+]
+```

@@ -1,0 +1,176 @@
+---
+sidebar_position: 1
+---
+
+# Setup Config
+
+Setting Up The Config For Ptero Manager Is Very Easy. All You Need To Do Is Go To The Config File And Change The Values To Your Own.
+
+## Config.js Example
+
+Fill In The Values With Your Own.
+
+```jsx title="config.js"
+const { ActivityType } = require('discord.js');
+module.exports = {
+    token: "Bot Token", //Required
+    prefix: "p!", // Required
+    name: "Ptero Manager", // Required
+    emailRegex: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, // Required
+    panelURL: "https://panel.hosting.xyz", // Must not include / at last. Example https://panel.seahost.xyz // Required
+    panelAPI: "Panel API", // Required Get It From - https://panel.hosting.xyz/admin/api
+    panelClientAPI: "Panel Client API", // Required Get It From - https://panel.hosting.xyz/account/api
+    currency: " ₪", // Required
+    websiteURL: "http://localhost:3000", // Required //If you have linked domain to the website hosted on http://serverIP:3000, use the domain name or make it http://serverIP:3000
+    verification: false, //If you need verification // Required
+    serverLimit: 5, // Required // Default Server Limit Per User
+    port: 3000, // Required
+    clientRoleId: '', // Required
+    channelCreateCategory: '', // Required
+    timeoutToCreateServer: 1000, // 5 Minutes // Required
+    defaultPermissions: [
+        "SendMessages",
+        "EmbedLinks",
+        "ReadMessageHistory"
+    ],
+    defaultUsersPermissions: [
+        "SendMessages"
+    ],
+    botStatus: {
+        status: 'online',
+        activities: [{
+            name: 'Servers & Users',
+            type: ActivityType.Watching
+        }]
+    },
+    owners: [
+        "Owner 1 ID",
+        "Owner 2 ID"
+    ],
+    channels: [ // Add channel ID where u want bot to respond
+        "Channel 1 ID",
+        "Channel 2 ID"
+    ],
+    guildMemberAdd: {
+        enable: false,
+        channelID: 'Welcome Channel ID',
+        message: '{welcome.user}, Hey Welcome To {welcome.server}', // Enter the message you want to send when a member is joined! check https://pterodocs.itsayaan.xyz
+        image: {
+            enable: false,
+            font: "Geizer",
+            backgroundImage: 'https://cdn.itsayaan.xyz/cdn/image/background-1.jpg',
+            text: {
+                color1: '#FFFFFF',
+                color2: '#FFFFFF'
+            }
+        }
+    },
+    topgg: {
+        enabled: false,
+        auth: "nobodycantouch", // If you have enabled this, go to https://top.gg/servers/yourServerID/webhooks and place the Webhook URL - http://serverIp:3000/vote and in Authorization - nobodycantouch. Good to go!
+        voteRequiredCommand: [
+            'server.create',
+            'server.delete',
+            'account.create'
+        ],
+        voteURL: "https://top.gg/servers/ServerIDHere",
+        coins: {
+            enable: false, // If you want users to get coins after voting you can enable this!
+            coinsToBeGiven: 20
+        },
+        webhook: {
+            enable: false,
+            webhookURL: '', // If enabled provide the webhookURL to send message to the channel whenever user votes
+            message: 'Hey {vote.user} (`{vote.userId}`)! Thanks For The Vote!'
+        }
+    },
+    importantLinks: [
+        {
+            name: 'Panel',
+            link: 'https://panel.hosting.xyz'
+        }, 
+        {
+            name: 'Discord',
+            link: 'https://discord.gg/r5kbMdXVAf'
+        }
+    ],
+    SMTP: {
+        enable: false,
+        host: "smtp.hosting.xyz",
+        port: 587,
+        secure: false,
+        auth: {
+            user: "SMTP Auth Username",
+            pass: "SMTP Auth Password"
+        },
+        from: "Something <no-reply@hosting.xyz>"
+    },
+    storeEnable: true,
+    store: [
+        {
+            price: "50",
+            numberOfServer: 1
+        },
+        {
+            price: "80",
+            numberOfServer: 2
+        },
+        {
+            price: "100",
+            numberOfServer: 4
+        },
+        {
+            price: "150",
+            numberOfServer: 6
+        }
+    ],
+    eggs: [
+        {
+            display: "Paper", // Warninig: Display name should not include space!
+            limits: {
+                limitRequire: false,
+                singleLimit: {//Fill this up if you have disabled limitRequire! 
+                    memory: 0,
+                    disk: 0,
+                    cpu: 0
+                },
+                maximum: {
+                    memory: 100,
+                    disk: 200,
+                    cpu: 10
+                },
+                minimum: {
+                    memory: null,
+                    disk: null,
+                    cpu: null
+                }
+            },
+            info: {
+                egg: 3,
+                docker_image: "ghcr.io/pterodactyl/yolks:java_8",
+                startup: "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
+                environment: {
+                    SERVER_JARFILE: "server.jar",
+                    BUILD_NUMBER: "latest"
+                },
+                feature_limits: {
+                    databases: 5,
+                    backups: 1
+                },
+                deploy: {
+                    locations: ["1"],
+                    dedicated_ip: false,
+                    port_range: []
+                },
+                start_on_completion: false,
+                skip_scripts: false,
+                oom_disabled: true
+            }
+        }
+    ]
+}
+```
+
+:::info Note
+Make Sure You Enter Details Correctly. If You Enter Wrong Details, The Bot Will Not Work.
+:::

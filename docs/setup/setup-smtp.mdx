@@ -1,0 +1,34 @@
+---
+sidebar_position: 3
+---
+
+# Setup SMTP Service
+Setup SMTP Service To Send **Verification**/**OTP** Emails. This Is Required For The Following Features:
+- Email Verification (When Verification Is Turned On)
+- OTP Verification (While Connecting Existing Accounts)
+
+:::info Note
+This Is An Optional Step. If You Skip This Step, You Will Not Be Able To Use The Features Mentioned Above.
+:::
+
+## Requirements
+You'll Be Needing A Valid SMTP Service To Send Emails. 
+
+### Step 1
+Setup Your Bot `config.js` File
+
+```jsx title="config.js:83"
+SMTP: {
+    enable: false,
+    host: "smtp.hosting.xyz",
+    port: 587,
+    secure: false,
+    auth: {
+        user: "SMTP Auth Username",
+        pass: "SMTP Auth Password"
+    },
+    from: "Something <no-reply@hosting.xyz>"
+},
+```
+
+You Are All Done With The Setup. Now You Can Use The Features Mentioned Above.

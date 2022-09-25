@@ -1,0 +1,70 @@
+---
+sidebar_position: 2
+---
+
+# Setup Top.gg Voting
+Setup Top.gg Voting For Ptero Manager Bot To Enable Voting Rewards/Command Requirements
+
+## Requirements
+Your Server Must Be Listed On Top.gg Server List! [Click Here To List Your Server](https://top.gg/servers/add)
+
+### Step 1
+Setup Your Bot `config.js` File
+
+```jsx title="config.js:54"
+topgg: {
+    enabled: false,
+    auth: "nobodycantouch", // If you have enabled this, go to https://top.gg/servers/yourServerID/webhooks and place the Webhook URL - http://serverIp:3000/vote and in Authorization - nobodycantouch. Good to go!
+    voteRequiredCommand: [
+        'server.create',
+        'server.delete',
+        'account.create'
+    ],
+    voteURL: "https://top.gg/servers/ServerIDHere",
+    coins: {
+        enable: false, // If you want users to get coins after voting you can enable this!
+        coinsToBeGiven: 20
+    },
+    webhook: {
+        enable: false,
+        webhookURL: '', // If enabled provide the webhookURL to send message to the channel whenever user votes
+        message: 'Hey {vote.user} (`{vote.userId}`)! Thanks For The Vote!'
+    }
+}
+```
+
+### Step 2
+Hear Over To Your Server Setting On Top.gg And Click On Webhooks<br/>
+![Example](https://i.imgur.com/UJlP29p.png)<br/>
+Fill Them Accordingly! And You Are Good To Go.
+
+# Voting Requirements Parameters
+`buylogs` - Vote Required For Whole Command<br/>
+`buylogs.list` - Vote Required For BuyLogs List Command<br/>
+`buylogs.info` - Vote Required For BuyLogs Info Command<br/>
+`daily` - Vote Required For Daily Command<br/>
+`give` - Vote Required For Give Command<br/>
+`store` - Vote Required For Store Command<br/>
+`help` - Vote Required For Help Command<br/>
+`ping` - Vote Required For Ping Command<br/>
+`uptime` - Vote Required For Uptime Command<br/>
+`redeem` - Vote Required For Redeem Command<br/>
+`account` - Vote Required For Whole Account Command<br/>
+`account.create` - Vote Required For Account Create Command<br/>
+`account.connect` - Vote Required For Account Connect Command<br/>
+`account.disconnect` - Vote Required For Account Disconnect Command<br/>
+`account.info` - Vote Required For Account Info Command<br/>
+`account.reset` - Vote Required For Account Reset Command<br/>
+`account.verify` - Vote Required For Account Verify<br/>
+`server` - Vote Required For Whole Server Command<br/>
+`server.create` - Vote Required For Server Create Command<br/>
+`server.delete` - Vote Required For Server Delete Command<br/>
+`server.list` - Vote Required For Server List Command<br/>
+`server.status` - Vote Required For Server List Command<br/>
+
+# Webhook Setup
+Enable Webhook And Insert Your Discord Webhook URL To `webhookURL` In config.js
+
+### Parameters
+`vote.user` - Mentions The Vote User!<br/>
+`vote.userId` - Displays User ID<br/>

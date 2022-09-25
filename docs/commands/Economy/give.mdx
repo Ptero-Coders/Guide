@@ -1,0 +1,44 @@
+---
+sidebar_position: 3
+---
+
+import {
+  DiscordMessages,
+  DiscordMessage,
+  DiscordCommand,
+  DiscordEmbed,
+  DiscordEmbedDescription,
+  DiscordEmbedFields,
+  DiscordEmbedField,
+  DiscordAttachments,
+  DiscordActionRow,
+  DiscordButton,
+  DiscordEmbedFooter,
+  DiscordMention
+} from "@skyra/discord-components-react";
+
+# Give
+Give Out Your Coins To Other Users
+
+:::info Note
+Just An Example, Its Not The Real Store!
+:::
+
+<DiscordMessages>
+  <DiscordMessage bot="true" roleColor="#FF0000" author="Ptero Manager" avatar="/img/ptero-manager.png">
+    <DiscordCommand slot="reply" author="User" command="/give" />
+    <DiscordEmbed
+      slot="embeds"
+      color="#2f3136"
+      authorName="Coins"
+      authorImage="/img/ptero-manager.png"
+    >
+        <DiscordEmbedDescription slot="description">
+            <b>54 ₪</b> Have Been Sent To <DiscordMention>AyoDev</DiscordMention> Successfully!
+<br/><br/>
+<code>10% Have Been Paid As Hosting TAX</code>
+        </DiscordEmbedDescription>
+        <DiscordEmbedFooter slot="footer" timestamp="Today"></DiscordEmbedFooter>
+    </DiscordEmbed>
+  </DiscordMessage>
+</DiscordMessages>

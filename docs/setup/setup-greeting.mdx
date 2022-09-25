@@ -1,0 +1,60 @@
+---
+sidebar_position: 4
+---
+
+# Setup Greeting
+Setup Greeting Channel And Message! So, Whenever A New Member Join The Server, The Bot Will Send A Message In The Greeting Channel.
+
+:::info Note
+This Is An Optional Step. You Can Skip This Step If You Want.
+:::
+
+## Step 1
+Setup Your Bot `config.js` File
+
+```jsx title="config.js:40"
+guildMemberAdd: {
+    enable: true,
+    channelID: '977176706165133393',
+    message: '{welcome.user}, Hey Welcome To {welcome.server}', // Enter the message you want to send when a member is joined! check https://pterodocs.itsayaan.xyz
+    image: {
+        enable: false,
+        font: "Geizer",
+        backgroundImage: 'https://wallpaper.dog/large/10882397.jpg',
+        text: {
+            color1: '#FFFFFF',
+            color2: '#FFFFFF'
+    }
+}
+```
+
+:::info Note
+Bot Must Have Send Message Permission In The Setuped Greeting Channel!
+:::
+
+# Parameters
+`{welcome.user}` - Mentions The User On Joining!<br/>
+`{welcome.username}` - Displays The User Name Of User<br/>
+`{welcome.server}` - Displays The Server Name<br/>
+`{welcome.membercount}` - Displays The Membercount Of The Server<br/>
+`{:emoji:}` - Add Emoji To The Message Ex. {:emoji:}
+
+# Available Fonts
+`Geizer` - Default Font<br/>
+`Captain`<br/>
+`UniHeavy`<br/>
+`Bourbon`<br/>
+`Horizon`<br/>
+`Rustico`<br/>
+`SweetSensations`
+
+# How To Add Custom Font?
+- Download The Font For Example- Font.otf / Font.ttf
+- Copy And Paste Your Font File To The Source Project `src/fonts` Folder
+- Now Go To `src/events/guildMemberAdd.js` Add The Code<br/>(Given Below) At The Top Of The File Below `const Canvas = require("canvas");`
+- Add The Family Name Set By You In The Config File!
+```jsx title="guildMemberAdd.js"
+Canvas.registerFont("Assest/Fonts/FontName.oft", {
+    family: "FontName" // Font name here
+});
+```

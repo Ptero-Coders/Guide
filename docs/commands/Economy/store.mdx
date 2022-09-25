@@ -1,0 +1,45 @@
+---
+sidebar_position: 4
+---
+
+import {
+  DiscordMessages,
+  DiscordMessage,
+  DiscordCommand,
+  DiscordEmbed,
+  DiscordEmbedDescription,
+  DiscordEmbedFields,
+  DiscordEmbedField,
+  DiscordAttachments,
+  DiscordActionRow,
+  DiscordButton,
+  DiscordEmbedFooter
+} from "@skyra/discord-components-react";
+
+# Store
+View Store From Ptero Manager!
+
+:::info Note
+Just An Example, Its Not The Real Store!
+:::
+
+<DiscordMessages>
+  <DiscordMessage bot="true" roleColor="#FF0000" author="Ptero Manager" avatar="/img/ptero-manager.png">
+    <DiscordCommand slot="reply" author="User" command="/store" />
+    <DiscordEmbed
+      slot="embeds"
+      color="#2f3136"
+      authorName="Store"
+      authorImage="/img/ptero-manager.png"
+    >
+      <DiscordEmbedDescription slot="description">
+        <u><b>Server Space</b></u><br/>
+        <code>1.</code> <b>50 ₪</b> - 1 Server(s)<br/>
+        <code>2.</code> <b>80 ₪</b> - 2 Server(s)<br/>
+        <code>3.</code> <b>100 ₪</b> - 4 Server(s)<br/>
+        <code>4.</code> <b>150 ₪</b> - 6 Server(s)<br/>
+      </DiscordEmbedDescription>
+      <DiscordEmbedFooter slot="footer" timestamp="Today"></DiscordEmbedFooter>
+    </DiscordEmbed>
+  </DiscordMessage>
+</DiscordMessages>
