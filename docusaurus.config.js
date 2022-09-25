@@ -63,10 +63,6 @@ const config = {
             position: 'right',
           },
         ],
-        colorMode: {
-          disableSwitch: true,
-          defaultMode: "dark",
-        },
       },
       footer: {
         style: 'dark',
@@ -95,6 +91,10 @@ const config = {
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Ptero Manager, Inc. Built with Docusaurus.`,
+      },
+      colorMode: {
+        disableSwitch: true,
+        defaultMode: "dark",
       },
       prism: {
         theme: darkCodeTheme,
