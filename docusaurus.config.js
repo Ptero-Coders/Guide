@@ -63,6 +63,10 @@ const config = {
             position: 'right',
           },
         ],
+        colorMode: {
+          disableSwitch: true,
+          defaultMode: "dark",
+        },
       },
       footer: {
         style: 'dark',
